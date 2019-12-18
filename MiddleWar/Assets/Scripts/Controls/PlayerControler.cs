@@ -12,31 +12,14 @@ namespace Controls {
         private void Update()
 
         {
-            ClickCursorForMoving();
-            ClickCursorForAttacing();
+            if(ClickCursorForMoving()) return;
+            if( ClickCursorForAttacing()) return;
+            
         }
 
 
-        private void ClickCursorForMoving()
 
-        {
-            if (Input.GetMouseButton(0))
-            {
-                RaycastHit hit;
-                bool isHit = Physics.Raycast(LastRay(), out hit);
-                if (isHit == true)
-                {
-                    GetComponent<Mover>().Move(hit.point);
-                }
-            }
-        }
-
-        private static Ray LastRay()
-        {
-            return Camera.main.ScreenPointToRay(Input.mousePosition);
-        }
-
-        private void ClickCursorForAttacing()
+        private bool ClickCursorForAttacing()
         {
 
            RaycastHit[] hits =  Physics.RaycastAll(LastRay());
@@ -52,10 +35,39 @@ namespace Controls {
 
                     GetComponent<Fight>().Attack(target);
 
-                }              
-
+                }
+                return true;
             }
-             
+
+            return false;
+        }
+
+
+        private bool ClickCursorForMoving()
+
+        {
+
+            RaycastHit hit;
+            bool isHit = Physics.Raycast(LastRay(), out hit);
+            if (isHit)
+            {
+                if (Input.GetMouseButton(0))
+                {
+
+                    GetComponent<Mover>().Move(hit.point);
+
+                }
+
+                return true;
+            }
+            return false;
+        }
+
+
+
+        private static Ray LastRay()
+        {
+            return Camera.main.ScreenPointToRay(Input.mousePosition);
         }
     }
 

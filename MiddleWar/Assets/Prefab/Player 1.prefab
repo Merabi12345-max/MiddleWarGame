@@ -557,6 +557,8 @@ GameObject:
   - component: {fileID: 95573094646671616}
   - component: {fileID: 114949542247766222}
   - component: {fileID: 195646621556712882}
+  - component: {fileID: 114272637515501004}
+  - component: {fileID: 114056027892792894}
   m_Layer: 0
   m_Name: Player 1
   m_TagString: Untagged
@@ -1906,6 +1908,29 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114056027892792894
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1549748175756824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6bba1b6b14cafb4b86dfcf476eb0ee9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponRange: 10
+--- !u!114 &114272637515501004
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1549748175756824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 131128e3d8c414647b4b24fbc771d8b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114949542247766222
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1917,6 +1942,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65dc0d4b8fd2ab74e899f6a2da85ada3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target: {fileID: 0}
 --- !u!137 &137161398657958804
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

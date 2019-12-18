@@ -4,7 +4,8 @@ using UnityEngine;
 
 namespace Combat { 
 
-public class CombatTarget : MonoBehaviour {
+public class CombatTarget : MonoBehaviour
+    {
 
 	
 		
